@@ -21,8 +21,17 @@ gulp.task('build:js', function() {
     output: {
       filename: 'myapp.js'
     },
+    resolve: {
+      extensions: ['', '.js', '.ts', '.less', '.html'],
+      modulesDirectories: ['node_modules']
+    },
     module: {
       loaders: [
+        {
+          test: /\.es6$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel-loader' 
+        }
       ]
     },
   };
