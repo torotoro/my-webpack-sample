@@ -1,0 +1,34 @@
+{
+  "name": "my-webpack-sample",
+  "version": "0.0.1",
+  "description": "A sample code of a usage of webpack for my understanding.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.1.0",
+    "webpack-stream": "^2.1.1",
+    "object-assign": "^4.0.1"
+  },
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-run-sequence": "^0.3.2",
+    "object-assign": "^4.0.1",
+    "run-sequence": "^1.1.4",
+    "webpack-stream": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torotoro/my-webpack-sample.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torotoro/my-webpack-sample/issues"
+  },
+  "homepage": "https://github.com/torotoro/my-webpack-sample#readme"
+}
