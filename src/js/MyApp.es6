@@ -1,5 +1,4 @@
-import Person from 'Person';
-import Man from 'Man';
+import Man, {Person} from 'Man';
 
 //import Person from 'Person';
 var taro = new Man();

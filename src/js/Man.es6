@@ -8,3 +8,4 @@ class Man extends Person {
 }
 
 export default Man;
+export {Person};
