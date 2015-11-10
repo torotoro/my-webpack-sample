@@ -3,37 +3,43 @@
 /*global require */
 'use strict';
 
+/* Definications of this application */
+var appName = 'MyApp';
+
+/* Dependencies */
 var gulp = require('gulp');
 var objectAssign = require('object-assign');
 var webpack = require('webpack-stream');
 var runSequence = require('run-sequence');
 var del = require('del');
 
+/* Environments */
 var src_root = 'src';
 var dist_root = 'release';
 
+/* Options */
 var watch = false;
 
 gulp.task('build:js', function() {
-  var src = src_root + '/**/main.js';
-  var dist = dist_root + '/js';
+  var src = src_root + '/**/' + appName + '.*';
+  var dist = dist_root + '/js/';
   var config = {
     output: {
-      filename: 'myapp.js'
+      filename: 'main.js'
     },
     resolve: {
-      extensions: ['', '.js', '.ts', '.less', '.html'],
-      modulesDirectories: ['node_modules']
+      extensions: ['.es6', '', '.js'],
+      modulesDirectories: ['node_modules', 'js']
     },
     module: {
       loaders: [
         {
           test: /\.es6$/,
           exclude: /(node_modules|bower_components)/,
-          loader: 'babel-loader' 
+          loader: 'babel?presets[]=es2015'
         }
       ]
-    },
+    }
   };
 
   if(watch) {
@@ -52,6 +58,7 @@ gulp.task('watch:js', function(callback) {
   watch = true;
 
   runSequence('build:js', callback);
+  gulp.watch('build:html');
 });
 
 gulp.task('build:html', function() {
