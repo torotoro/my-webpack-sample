@@ -1,5 +1,5 @@
 export default class Person {
-  constructor(name, age) {
+  constructor({name, age}) {
     this.sex = "Person";
     this.name = name;
     this.age = age;
@@ -10,10 +10,3 @@ export default class Person {
     console.log("I'm a", this.sex, ".");
   }
 }
-
-/*
-(() => {
-  let who = new Person("Taro", 30);
-  who.say();
-})();
-*/

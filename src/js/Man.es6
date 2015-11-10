@@ -1,8 +1,10 @@
 import Person from "Person";
 
-export default class Man extends Person {
-  constructor(name = "Taro", age = 30) {
-    super(name, age);
+class Man extends Person {
+  constructor({age = 30, name = "Taro"} = {}) {
+    super({name, age});
     this.sex = "Male";
   }
 }
+
+export default Man;
