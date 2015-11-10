@@ -12,6 +12,8 @@ var objectAssign = require('object-assign');
 var webpack = require('webpack-stream');
 var runSequence = require('run-sequence');
 var del = require('del');
+// browser Sync
+var browserSync = require('browser-sync');
 
 /* Environments */
 var src_root = 'src';
@@ -77,4 +79,13 @@ gulp.task('clean', function(callback) {
 
 gulp.task('default', function(callback) {
   runSequence('clean', ['build:js', 'build:html'], callback);
+});
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: dist_root
+        }
+    });
 });
