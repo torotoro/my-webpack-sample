@@ -1,3 +1,4 @@
+//jshint esnext: true
 export default class Person {
   constructor({name, age}) {
     this.sex = "Person";

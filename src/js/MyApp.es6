@@ -1,3 +1,4 @@
+//jshint esnext: true
 import Man, {Person} from 'Man';
 
 //import Person from 'Person';
