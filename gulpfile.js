@@ -12,8 +12,8 @@ var objectAssign = require('object-assign');
 var webpack = require('webpack-stream');
 var runSequence = require('run-sequence');
 var del = require('del');
-// browser Sync
 var browserSync = require('browser-sync');
+var jshint = require('gulp-jshint');
 
 /* Environments */
 var src_root = 'src';
@@ -27,7 +27,8 @@ gulp.task('build:js', function() {
   var dist = dist_root + '/js/';
   var config = {
     output: {
-      filename: 'main.js'
+      filename: 'main.js',
+      publicPath: '/js/' //path that will be considered when requiring your files
     },
     resolve: {
       extensions: ['.es6', '', '.js'],
@@ -69,6 +70,15 @@ gulp.task('build:html', function() {
 
   return gulp.src(src)
     .pipe(gulp.dest(dist));
+});
+
+gulp.task('lint', function() {
+  var src = src_root + '/**/*.es6';
+
+  return gulp.src(src)
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('clean', function(callback) {

@@ -19,9 +19,9 @@ gulp
 
 ```gulp browser-sync```
 
-and you access the following URI on your console via browser.
+and you can access the following URI on your console via browser.
 
 # TIPS
 
-When use a company proxy and you are facing with a issue around npm install.
+When you are facing with a issue around npm install and you use a company proxy.
 You can probably use the npm config ```strict-ssl=false```.
