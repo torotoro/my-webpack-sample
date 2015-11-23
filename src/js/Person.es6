@@ -7,7 +7,6 @@ export default class Person {
   }
 
   say(){
-    console.log("Hello! My name is", this.name, ". I'm", this.age, "years old.");
-    console.log("I'm a", this.sex, ".");
+    return "Hello! My name is" + this.name + ". I'm" + this.age + "years old.¥n"+"I'm a" + this.sex + ".";
   }
 }

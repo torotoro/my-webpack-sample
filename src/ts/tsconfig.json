@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES5",
+        "noImplicitAny": true,
+        "noLib": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "isolatedModules": false,
+        "outDir": "built/local",
+        "sourceMap": true
+    }
+}

@@ -31,8 +31,8 @@ gulp.task('build:js', function() {
       publicPath: '/js/' //path that will be considered when requiring your files
     },
     resolve: {
-      extensions: ['.es6', '', '.js'],
-      modulesDirectories: ['node_modules', 'js']
+      extensions: ['.es6', '', '.js', '.ts'],
+      modulesDirectories: ['node_modules', 'js', 'ts']
     },
     module: {
       loaders: [
@@ -40,6 +40,11 @@ gulp.task('build:js', function() {
           test: /\.es6$/,
           exclude: /(node_modules|bower_components)/,
           loader: 'babel?presets[]=es2015'
+        },
+        {
+          test: /\.ts$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'typescript'
         }
       ]
     }
@@ -83,8 +88,8 @@ gulp.task('lint', function() {
 
 gulp.task('clean', function(callback) {
     return del(['.tmp', 'release'], callback);
-//                                  ^^^^^^^^ 
-//   This is the key here, to make sure tasks run asynchronously! 
+//                                  ^^^^^^^^
+//   This is the key here, to make sure tasks run asynchronously!
 });
 
 gulp.task('default', function(callback) {
